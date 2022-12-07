@@ -14,8 +14,6 @@ def canUnlockAll(boxes):
                     if i not in opened and i < len(boxes):
                         new_key = True
                         opened.append(i)
-
-
     if len(boxes) == len(opened):
         return True
     else:
