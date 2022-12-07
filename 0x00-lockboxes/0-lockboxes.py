@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
         for box in boxes:
             if boxes.index(box) in opened:
                 for i in box:
-                    if i not in opened:
+                    if i not in opened and i < len(boxes):
                         new_key = True
                         opened.append(i)
 
