@@ -7,7 +7,7 @@ def minOperations(n):
     to result in exactly n H characters in the file """
     if not n or not isinstance(n, int) or n <= 1:
         return 0
-    i = 1
+    i = 0
     string = "H"
     while (len(string) != n):
         if ((n % len(string)) == 0):
@@ -15,4 +15,4 @@ def minOperations(n):
             i += 1
         string = string + string_cpy
         i += 1
-    return i - 1
+    return i
