@@ -15,4 +15,4 @@ def minOperations(n):
             i += 1
         string = string + string_cpy
         i += 1
-    return i - 1
+    return i
