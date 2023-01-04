@@ -5,7 +5,7 @@
 def minOperations(n):
     """ method that calculates the fewest number of operations
     to result in exactly n H characters in the file """
-    if (n <= 0 or not isinstance(n, int) or not n):
+    if (not n or not isinstance(n, int) or n <= 0):
         return 0
     i = 1
     string = "H"
