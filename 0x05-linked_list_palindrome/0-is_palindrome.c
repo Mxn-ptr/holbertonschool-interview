@@ -19,37 +19,47 @@ size_t listint_len(const listint_t *h)
 }
 
 /**
+ * check_palindrome - check recursively if a list is a palindrome
+ * @node: node to check
+ * @k: index to the node to check with node
+ * Return: 1 if same, 0 if not
+*/
+int check_palindrome(listint_t *node, int k)
+{
+	listint_t *check;
+	int i;
+	int is_palindrome = 1;
+
+	check = node;
+	if (is_palindrome == 1 && k > 0)
+	{
+		for (i = 0; i < k; i++)
+			check = check->next;
+		if (node->n == check->n)
+		{
+			is_palindrome = check_palindrome(node->next, (k - 2));
+		}
+		else
+			is_palindrome = 0;
+	}
+	return (is_palindrome);
+}
+
+/**
  * is_palindrome - checks if a listint_t list is a palindrome
  * @head : double pointer to the head of the list
  * Return: 1 if palindrome, 0 if not
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *front, *rear;
-	size_t len = 0, i = 0, j;
+	size_t len = 0;
 
-
-	if ((*head) == NULL || head == NULL)
+	if (*head == NULL || head == NULL)
 		return (1);
 
 	len = listint_len(*head);
-
-	while (i != len / 2)
-	{
-		front = rear = *head;
-		for (j = 0; j < i; j++)
-		{
-			front = front->next;
-		}
-		for (j = 0; j < len - (i + 1); j++)
-		{
-			rear = rear->next;
-		}
-		if (front->n == rear->n)
-			i++;
-		else
-			return (0);
-	}
+	if (!check_palindrome(*head, (len - 1)))
+		return (0);
 
 	return (1);
 }
