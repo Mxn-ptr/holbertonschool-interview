@@ -23,8 +23,9 @@ if __name__ == '__main__':
             size = int(split_line[-1])
             status = int(split_line[-2])
             count += 1
-            total_size += size
-            codes[status] += 1
+            if status in codes.keys():
+                total_size += size
+                codes[status] += 1
 
             if count % 10 == 0:
                 print_line()
