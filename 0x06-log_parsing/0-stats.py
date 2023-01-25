@@ -20,16 +20,17 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             count += 1
-            split_line = line.split()
-            size = int(split_line[-1])
-            total_size += size
-            status = int(split_line[-2])
-            codes[status] += 1
+            try:
+                split_line = line.split()
+                size = int(split_line[-1])
+                total_size += size
+                status = int(split_line[-2])
+                codes[status] += 1
+            except ValueError:
+                pass
 
             if count % 10 == 0:
                 print_line()
-    except ValueError:
-        pass
     except KeyboardInterrupt:
         print_line()
         raise
