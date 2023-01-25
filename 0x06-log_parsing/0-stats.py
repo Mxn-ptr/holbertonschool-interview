@@ -22,8 +22,8 @@ if __name__ == '__main__':
             split_line = line.split()
             size = int(split_line[-1])
             status = int(split_line[-2])
-            count += 1
             if status in codes.keys():
+                count += 1
                 total_size += size
                 codes[status] += 1
 
