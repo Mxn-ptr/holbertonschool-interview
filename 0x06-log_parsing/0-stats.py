@@ -11,7 +11,7 @@ codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 def print_line():
     """ Print some information """
     print("File size: {}".format(total_size))
-    for code in sorted(codes.keys()):
+    for code in codes.keys():
         if codes[code] > 0:
             print("{}: {}".format(code, codes[code]))
 
@@ -31,4 +31,5 @@ if __name__ == '__main__':
                 print_line()
     except KeyboardInterrupt:
         print_line()
+        raise
     print_line()
