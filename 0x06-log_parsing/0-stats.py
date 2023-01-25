@@ -29,6 +29,8 @@ if __name__ == '__main__':
 
             if count % 10 == 0:
                 print_line()
+    except ValueError:
+        pass
     except KeyboardInterrupt:
         print_line()
     print_line()
