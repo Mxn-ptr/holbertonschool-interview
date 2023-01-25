@@ -30,4 +30,3 @@ if __name__ == '__main__':
                 print_line()
     except KeyboardInterrupt:
         print_line()
-    print_line()
