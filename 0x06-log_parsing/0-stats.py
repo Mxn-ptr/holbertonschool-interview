@@ -23,8 +23,8 @@ if __name__ == '__main__':
             try:
                 split_line = line.split()
                 size = int(split_line[-1])
-                status = int(split_line[-2])
                 total_size += size
+                status = int(split_line[-2])
                 codes[status] += 1
             except ValueError:
                 pass
