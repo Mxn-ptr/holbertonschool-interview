@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" Write a function to print some informations """
 import sys
 
 
@@ -8,6 +9,7 @@ codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
 
 def print_line():
+    """ Print some information """
     print("File size: {}".format(total_size))
     for code in sorted(codes.keys()):
         if codes[code] > 0:
@@ -28,3 +30,4 @@ if __name__ == '__main__':
                 print_line()
     except KeyboardInterrupt:
         print_line()
+    print_line()
