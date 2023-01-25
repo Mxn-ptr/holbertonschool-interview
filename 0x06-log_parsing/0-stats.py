@@ -16,21 +16,22 @@ def print_line():
             print("{}: {}".format(code, codes[code]))
 
 
+if __name__ == '__main__':
+    try:
+        for line in sys.stdin:
+            count += 1
+            try:
+                split_line = line.split()
+                size = int(split_line[-1])
+                status = int(split_line[-2])
+                total_size += size
+                codes[status] += 1
+            except ValueError:
+                pass
 
-try:
-    for line in sys.stdin:
-        split_line = line.split()
-        size = int(split_line[-1])
-        status = int(split_line[-2])
-        count += 1
-        total_size += size
-        codes[status] += 1
-
-        if count % 10 == 0:
-            print_line()
-except ValueError:
-    pass
-except KeyboardInterrupt:
+            if count % 10 == 0:
+                print_line()
+    except KeyboardInterrupt:
+        print_line()
+        raise
     print_line()
-    raise
-print_line()
