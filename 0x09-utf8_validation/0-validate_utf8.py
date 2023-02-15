@@ -11,7 +11,8 @@ def validUTF8(data):
 
         if number_bytes == 0:
             for bit in binary:
-                if bit == '0': break
+                if bit == '0':
+                    break
                 number_bytes += 1
 
             if number_bytes == 0:
