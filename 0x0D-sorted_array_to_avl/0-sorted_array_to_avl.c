@@ -43,6 +43,8 @@ avl_t *create_avl_tree(int *array, int start, int end, avl_t *parent)
 		return (NULL);
 
 	new = binary_tree_node(parent, array[mid]);
+	if (!new)
+		return (NULL);
 	new->left = create_avl_tree(array, start, mid - 1, new);
 	new->right = create_avl_tree(array, mid + 1, end, new);
 	return (new);
