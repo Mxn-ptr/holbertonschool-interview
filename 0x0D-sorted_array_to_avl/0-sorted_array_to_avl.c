@@ -59,10 +59,5 @@ avl_t *create_avl_tree(int *array, int start, int end, avl_t *parent)
 */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-	avl_t *tree = NULL;
-
-	tree = create_avl_tree(array, 0, size - 1, NULL);
-	if (!tree)
-		return (NULL);
-	return (tree);
+	return (create_avl_tree(array, 0, size - 1, NULL));
 }
