@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Rain Module """
+
 
 def rain(walls):
     """ rain """
@@ -7,7 +9,7 @@ def rain(walls):
         left = walls[i]
         for j in range(i):
             left = max(left, walls[j])
-        
+
         right = walls[i]
         for j in range(i + 1, len(walls)):
             right = max(right, walls[j])
