@@ -14,11 +14,9 @@ void print_array(int *array, int start, int end)
 
 	for (i = start; i < end; i++)
 	{
-		if (i == end - 1)
-			printf("%d\n", array[i]);
-		else
-			printf("%d, ", array[i]);
+		printf("%d, ", array[i]);
 	}
+	printf("%d\n", array[i]);
 }
 
 /**
@@ -39,18 +37,15 @@ int advanced_binary_recurs(int *array, int start, int end, int value)
 	if (start == end)
 		return (-1);
 	if (array[middle] == value && array[middle - 1] != value)
-	{
-		print_array(array, middle, end);
 		return (middle);
-	}
 
-	if (array[middle] <= value)
-	{
-		return (advanced_binary_recurs(array, middle, end, value));
-	}
-	else
+	if (array[middle] >= value)
 	{
 		return (advanced_binary_recurs(array, start, middle, value));
+	}
+	if (array[middle] <= value)
+	{
+		return (advanced_binary_recurs(array, middle + 1, end, value));
 	}
 	return (-1);
 }
@@ -65,5 +60,5 @@ int advanced_binary_recurs(int *array, int start, int end, int value)
 */
 int advanced_binary(int *array, size_t size, int value)
 {
-	return (advanced_binary_recurs(array, 0, size, value));
+	return (advanced_binary_recurs(array, 0, size - 1, value));
 }
