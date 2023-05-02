@@ -60,5 +60,8 @@ int advanced_binary_recurs(int *array, int start, int end, int value)
 */
 int advanced_binary(int *array, size_t size, int value)
 {
+	if (!array)
+		return (-1);
+
 	return (advanced_binary_recurs(array, 0, size - 1, value));
 }
