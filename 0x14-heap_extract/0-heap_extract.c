@@ -45,6 +45,9 @@ heap_t *find_last_nodes(heap_t *root)
 	int nodes = 0, size = 0;
 	heap_t *last_node;
 
+	if (!root || size == 0)
+		return (0);
+
 	size = binary_tree_size(root);
 
 	for (nodes = 1; nodes <= size; nodes <<= 1)
