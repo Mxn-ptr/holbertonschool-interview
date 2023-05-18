@@ -45,8 +45,8 @@ heap_t *find_last_nodes(heap_t *root)
 	int nodes = 0, size = 0;
 	heap_t *last_node;
 
-	if (!root || size == 0)
-		return (0);
+	if (!root)
+		return (NULL);
 
 	size = binary_tree_size(root);
 
@@ -95,12 +95,17 @@ void heapify(heap_t **root)
 int heap_extract(heap_t **root)
 {
 	heap_t *last_node;
-	int extracted = (*root)->n;
+	int extracted = 0;
 
 	if (!root || !(*root))
 		return (0);
 
 	last_node = find_last_nodes(*root);
+
+	if (last_node == NULL)
+		return (0);
+
+	extracted = (*root)->n;
 	swap(*root, last_node);
 
 	if (last_node->n == last_node->parent->left->n)
