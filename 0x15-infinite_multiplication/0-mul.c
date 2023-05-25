@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		print("Error\n");
+		print("Error");
 		exit(98);
 	}
 
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 	{
 		if (!_isdigit(num1[i]))
 		{
-			print("Error\n");
+			print("Error");
 			exit(98);
 		}
 	}
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 	{
 		if (!_isdigit(num2[i]))
 		{
-			print("Error\n");
+			print("Error");
 			exit(98);
 		}
 	}
