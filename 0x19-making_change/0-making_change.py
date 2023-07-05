@@ -8,17 +8,18 @@ def makeChange(coins, total):
       to meet a given amount total """
     if total <= 0:
         return 0
-    if len(coins) == 0:
+    coins.sort(reverse=True)
+    i = 0
+    numb_coins = 0
+
+    while (i < len(coins) and total > 0):
+        if (total - coins[i]) >= 0:
+            total -= coins[i]
+            numb_coins += 1
+        else:
+            i += 1
+
+    if (total > 0 and numb_coins >= 0):
         return -1
-    coins = sorted(coins)
-    dynamic = [float('inf')] * (total + 1)
-    dynamic[0] = 0
-    for i in range(total + 1):
-        for coin in coins:
-            if coin > i:
-                break
-            if dynamic[i - coin] != -1:
-                dynamic[i] = min(dynamic[i - coin] + 1, dynamic[i])
-    if dynamic[total] == float('inf'):
-        return -1
-    return dynamic[total]
+    else:
+        return numb_coins
