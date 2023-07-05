@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ File of the making_change function """
 
+
 def makeChange(coins, total):
     """ Given a pile of coins of differents values,
      determine the fewest number of coins needed
@@ -18,7 +19,7 @@ def makeChange(coins, total):
         else:
             i += 1
 
-    if (total > 0 and numb_coins > 0):
+    if (total > 0 and numb_coins >= 0):
         return -1
     else:
         return numb_coins
