@@ -36,7 +36,7 @@ int is_solution_valid(char const *s, char const **words,
 		free(substring);
 	}
 
-	for (int i = 0; i < nb_words; i++)
+	for (i = 0; i < nb_words; i++)
 	{
 		if (!found_words[i])
 		{
